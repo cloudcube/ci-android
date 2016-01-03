@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER lijy91@foxmail.com
 
 # apt
-RUN sudo dpkg --add-architecture i386
-RUN sudo apt-get update
-RUN sudo apt-get install -y wget
+RUN dpkg --add-architecture i386
+RUN apt-get update
+RUN apt-get install -y wget
 
 # JAVA7
 RUN wget http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
