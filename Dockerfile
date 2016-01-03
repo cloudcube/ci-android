@@ -37,7 +37,6 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 # 安装 SDK 软件包
 RUN android list sdk --all
 RUN echo yes | android update sdk --no-ui --all --filter platform-tools
-RUN echo yes | android update sdk --no-ui --all --filter tools
 RUN echo yes | android update sdk --no-ui --all --filter android-23
 RUN echo yes | android update sdk --no-ui --all --filter build-tools-23.0.2
 RUN echo yes | android update sdk --no-ui --all --filter sysimg-23
