@@ -12,13 +12,12 @@ script:
 ```
 
 # 已安装环境
-> - [ ] wget
-> - [ ] Oracle Java 7 (7u79)
-> - [ ] Oracle Java 8 (8u66)
-> - [ ] Android SDK (r24.3.4)
+> - [x] wget
+> - [x] Oracle Java 7 (7u79)
+> - [x] Oracle Java 8 (8u66)
+> - [x] Android SDK (r24.3.4)
 > - [ ] Android NDK
 > - [ ] Gradle
-
 
 # License
 
