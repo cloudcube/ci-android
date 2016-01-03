@@ -36,7 +36,9 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 
 # 安装 SDK 软件包
 RUN android list sdk --all
-RUN echo "y" | android update sdk --no-ui --force --all
+RUN echo "y" | android update sdk --no-ui --force --filter platform-tools,tools
+RUN echo "y" | android update sdk --no-ui --force --filter android-23,build-tools-23.0.2,sysimg-23
+RUN echo "y" | android update sdk --no-ui --force --filter extra-android-m2repository,extra-google-m2repository,extra-android-support
 
 # 安装Android NDK
 
