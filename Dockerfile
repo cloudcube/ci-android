@@ -23,7 +23,7 @@ ENV JAVA_HOME /usr/local/jdk1.7.0_79
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # 安装Android SDK
-RUN sudo apt-get -y install libncurses5:i386 libstdc++6:i386 zlib1g:i386
+RUN apt-get -y install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 RUN wget http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
 RUN tar xvzf android-sdk_r24.3.4-linux.tgz
 RUN mv android-sdk-linux /usr/local/android-sdk
