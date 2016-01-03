@@ -25,7 +25,7 @@ ENV PATH $PATH:$JAVA_HOME/bin
 # 安装Android SDK
 RUN apt-get -y install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 RUN wget http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
-RUN tar xvzf android-sdk_r24.3.4-linux.tgz
+RUN tar -xvzf android-sdk_r24.3.4-linux.tgz
 RUN mv android-sdk-linux /usr/local/android-sdk
 
 # 配置Android SDK环境变量
@@ -36,14 +36,14 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 
 # 安装 SDK 软件包
 RUN android list sdk --all
-RUN echo yes | android update sdk -u -n -t platform-tools
-RUN echo yes | android update sdk -u -n -t tools
-RUN echo yes | android update sdk -u -n -t android-23
-RUN echo yes | android update sdk -u -n -t build-tools-23.0.2
-RUN echo yes | android update sdk -u -n -t sysimg-23
-RUN echo yes | android update sdk -u -n -t extra-android-m2repository
-RUN echo yes | android update sdk -u -n -t extra-google-m2repository
-RUN echo yes | android update sdk -u -n -t extra-android-support
+RUN echo yes | android update sdk --no-ui --all --filter platform-tools
+RUN echo yes | android update sdk --no-ui --all --filter tools
+RUN echo yes | android update sdk --no-ui --all --filter android-23
+RUN echo yes | android update sdk --no-ui --all --filter build-tools-23.0.2
+RUN echo yes | android update sdk --no-ui --all --filter sysimg-23
+RUN echo yes | android update sdk --no-ui --all --filter extra-android-m2repository
+RUN echo yes | android update sdk --no-ui --all --filter extra-google-m2repository
+RUN echo yes | android update sdk --no-ui --all --filter extra-android-support
 
 # 安装Android NDK
 
