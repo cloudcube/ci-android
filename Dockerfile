@@ -34,7 +34,7 @@ ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 
-# 安装 SDK 软件包
+# 添加 SDK 软件包
 RUN android list sdk --all
 RUN echo yes | android update sdk --no-ui --all --filter platform-tools
 RUN echo yes | android update sdk --no-ui --all --filter build-tools-23.0.2
@@ -44,6 +44,18 @@ RUN echo yes | android update sdk --no-ui --all --filter extra-android-m2reposit
 RUN echo yes | android update sdk --no-ui --all --filter extra-google-m2repository
 RUN echo yes | android update sdk --no-ui --all --filter extra-android-support
 
-# TODO: 安装Android NDK
+# 安装 Android NDK
+RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
+RUN chmod a+x android-ndk-r10c-darwin-x86_64.bin
+RUN ./android-ndk-r10c-darwin-x86_64.bin
 
 # TODO: 安装Gradle
+
+# 清理临时文件
+RUN rm jdk-7u79-linux-x64.tar.gz
+RUM rm -r jdk1.7.0_79
+RUN rm jdk-8u66-linux-x64.tar.gz
+RUN rm -r jdk1.8.0_66
+RUN rm android-sdk_r24.3.4-linux.tgz
+RUN rm -r android-sdk-linux
+RUN rm android-ndk-r10c-darwin-x86_64.bin
