@@ -46,8 +46,8 @@ RUN echo yes | android update sdk --no-ui --all --filter extra-android-support
 
 # 安装 Android NDK
 RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
-RUN chmod a+x android-ndk-r10c-darwin-x86_64.bin
-RUN ./android-ndk-r10c-darwin-x86_64.bin
+RUN chmod a+x android-ndk-r10e-linux-x86_64.bin
+RUN ./android-ndk-r10e-linux-x86_64.bin
 
 # TODO: 安装Gradle
 
