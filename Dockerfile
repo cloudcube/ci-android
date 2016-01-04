@@ -5,6 +5,7 @@ MAINTAINER lijy91@foxmail.com
 RUN dpkg --add-architecture i386
 RUN apt-get update
 RUN apt-get install -y wget
+RUN apt-get install -y tree
 
 # 安装 Java7
 RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
@@ -51,7 +52,9 @@ RUN echo yes | android update sdk --no-ui --all --filter extra-android-support
 RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
 RUN chmod a+x android-ndk-r10e-linux-x86_64.bin
 RUN mv android-ndk-r10e-linux-x86_64.bin /usr/local/android-ndk-r10e-linux-x86_64.bin
-RUN cd /usr/local/ & ./android-ndk-r10e-linux-x86_64.bin
-RUN cd /usr/local/ & rm android-ndk-r10e-linux-x86_64.bin
+RUN ./usr/local/android-ndk-r10e-linux-x86_64.bin
+RUN rm /usr/local/android-ndk-r10e-linux-x86_64.bin
 
 # TODO: 安装Gradle
+
+RUN tree -L 1 /usr/local/
