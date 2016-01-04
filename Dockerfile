@@ -12,7 +12,7 @@ RUN tar -xvzf jdk-7u79-linux-x64.tar.gz
 RUN mv jdk1.7.0_79 /usr/local/jdk1.7.0_79
 
 RUN rm jdk-7u79-linux-x64.tar.gz
-RUM rm -r jdk1.7.0_79
+RUN rm -r jdk1.7.0_79
 
 # 安装Java8
 RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
