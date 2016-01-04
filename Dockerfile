@@ -8,13 +8,13 @@ RUN apt-get install -y wget
 RUN apt-get install -y tree
 
 # 安装 Java7
-RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
+RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
 RUN tar -xvzf jdk-7u79-linux-x64.tar.gz
 RUN mv jdk1.7.0_79 /usr/local/jdk1.7.0_79
 RUN rm jdk-7u79-linux-x64.tar.gz
 
 # 安装Java8
-RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
 RUN tar -xvzf jdk-8u66-linux-x64.tar.gz
 RUN mv jdk1.8.0_66 /usr/local/jdk1.8.0_66
 RUN rm jdk-8u66-linux-x64.tar.gz
@@ -27,7 +27,7 @@ ENV PATH $PATH:$JAVA_HOME/bin
 
 # 安装Android SDK
 RUN apt-get -y install libncurses5:i386 libstdc++6:i386 zlib1g:i386
-RUN wget -q http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
+RUN wget http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
 RUN tar -xvzf android-sdk_r24.3.4-linux.tgz
 RUN mv android-sdk-linux /usr/local/android-sdk
 RUN rm android-sdk_r24.3.4-linux.tgz
@@ -49,7 +49,7 @@ RUN echo yes | android update sdk --no-ui --all --filter extra-google-m2reposito
 RUN echo yes | android update sdk --no-ui --all --filter extra-android-support
 
 # 安装 Android NDK
-RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
+RUN wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin
 RUN chmod a+x android-ndk-r10e-linux-x86_64.bin
 RUN mv android-ndk-r10e-linux-x86_64.bin /usr/local/android-ndk-r10e-linux-x86_64.bin
 RUN ./usr/local/android-ndk-r10e-linux-x86_64.bin
