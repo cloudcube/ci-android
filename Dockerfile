@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM daocloud.io/library/ubuntu:16.04
 MAINTAINER lijy91 <lijy91@foxmail.com>
 
 # apt
