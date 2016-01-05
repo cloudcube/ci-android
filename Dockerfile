@@ -38,6 +38,7 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 
 # 添加 Android SDK 软件包
 RUN android list sdk --all
+
 RUN echo yes | android update sdk --no-ui --all --filter platform-tools \
   && echo yes | android update sdk --no-ui --all --filter build-tools-23.0.2 \
   && echo yes | android update sdk --no-ui --all --filter android-23 \
