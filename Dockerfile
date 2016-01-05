@@ -6,10 +6,10 @@ RUN dpkg --add-architecture i386
 RUN apt-get update \
   && apt-get install -y wget tree \
   && apt-get clean
- 
+
 # 安装 Java 7
 RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz \
-  &&tar -xvzf jdk-7u79-linux-x64.tar.gz -C /usr/local \
+  && tar -xvzf jdk-7u79-linux-x64.tar.gz -C /usr/local \
   && rm jdk-7u79-linux-x64.tar.gz
 
 # 安装 Java 8
@@ -29,7 +29,7 @@ RUN apt-get -y install libncurses5:i386 libstdc++6:i386 zlib1g:i386 \
   && tar -xvzf android-sdk_r24.3.4-linux.tgz -C /usr/local \
   && rm android-sdk_r24.3.4-linux.tgz \
   && apt-get clean
-  
+
 # 配置 Android SDK 环境变量
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
@@ -40,8 +40,8 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/23.0.2
 RUN android list sdk --all
 RUN echo yes | android update sdk --no-ui --all --filter platform-tools \
   && echo yes | android update sdk --no-ui --all --filter build-tools-23.0.2 \
-  && echo yes | android update sdk --no-ui --all --filter android-23,sysimg-23 \
-  && echo yes | android update sdk --no-ui --all --filter android-22,sysimg-22 \
+  && echo yes | android update sdk --no-ui --all --filter android-23 \
+  && echo yes | android update sdk --no-ui --all --filter android-22 \
   && echo yes | android update sdk --no-ui --all --filter extra-android-m2repository \
   && echo yes | android update sdk --no-ui --all --filter extra-google-m2repository \
   && echo yes | android update sdk --no-ui --all --filter extra-android-support
