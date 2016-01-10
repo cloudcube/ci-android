@@ -47,17 +47,15 @@ RUN echo yes | android update sdk --no-ui --all --filter platform-tools \
   && echo yes | android update sdk --no-ui --all --filter extra-google-m2repository \
   && echo yes | android update sdk --no-ui --all --filter extra-android-support
 
-# 安装 Android NDK
-RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin \
-  && chmod a+x android-ndk-r10e-linux-x86_64.bin \
-  && ./android-ndk-r10e-linux-x86_64.bin -o/usr/local \
-  && rm android-ndk-r10e-linux-x86_64.bin
+# # 安装 Android NDK
+# RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin \
+#   && chmod a+x android-ndk-r10e-linux-x86_64.bin \
+#   && ./android-ndk-r10e-linux-x86_64.bin -o/usr/local \
+#   && rm android-ndk-r10e-linux-x86_64.bin
 
-# 配置 Android NDK 环境变量
-ENV ANDROID_NDK_HOME /usr/local/android-ndk-r10e
-ENV PATH $PATH:$ANDROID_NDK_HOME
+# # 配置 Android NDK 环境变量
+# ENV ANDROID_NDK_HOME /usr/local/android-ndk-r10e
+# ENV PATH $PATH:$ANDROID_NDK_HOME
 
-# TODO: 安装Gradle
-
-RUN tree -L 1 /usr/local/
-RUN tree -L 1
+# RUN tree -L 1 /usr/local/
+# RUN tree -L 1

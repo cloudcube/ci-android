@@ -16,8 +16,7 @@ script:
 - [x] Oracle Java JDK 7 (7u79)
 - [x] Oracle Java JDK 8 (8u66)
 - [x] Android SDK (r24.3.4)
-- [ ] Android NDK
-- [ ] Gradle
+- [ ] ~~Android NDK~~
 
 # License
 
