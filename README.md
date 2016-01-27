@@ -1,5 +1,5 @@
 # ci-android
-DaoCloud Android的持续集成镜像
+用于 [Android](http://www.android.com/) 的 [Docker](https://www.docker.com/) 镜像。
 
 # 用法
 在代码根目录创建一个 daocloud.yml 文件来配置您的构建任务。
@@ -12,7 +12,6 @@ script:
 ```
 
 # 已安装环境
-- [x] wget
 - [x] Oracle Java JDK 7 (7u79)
 - [x] Oracle Java JDK 8 (8u66)
 - [x] Android SDK (r24.3.4)
@@ -20,7 +19,7 @@ script:
 
 # License
 
-    Copyright (C) 2015 LiJianying
+    Copyright (C) 2015 LiJianying <lijy91@foxmail.com>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
