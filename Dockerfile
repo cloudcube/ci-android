@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER LiJianying <lijy91@foxmail.com>
+MAINTAINER JianyingLi <lijy91@foxmail.com>
 
 RUN dpkg --add-architecture i386                                    && \
     apt-get update                                                  && \
@@ -23,9 +23,9 @@ ENV JAVA_HOME /usr/local/jdk1.7.0_79
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # 安装 Android SDK
-RUN wget -q http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz && \
-    tar -xzf android-sdk_r24.3.4-linux.tgz -C /usr/local              && \
-    rm android-sdk_r24.3.4-linux.tgz
+RUN wget -q http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
+    tar -xzf android-sdk_r24.4.1-linux.tgz -C /usr/local              && \
+    rm android-sdk_r24.4.1-linux.tgz
 
 # 配置 Android SDK 环境变量
 ENV ANDROID_HOME /usr/local/android-sdk-linux
