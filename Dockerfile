@@ -48,5 +48,5 @@ RUN echo yes | android update sdk --no-ui --all --filter platform-tools         
 #     rm android-ndk-r10e-linux-x86_64.bin
 
 # # 配置 Android NDK 环境变量
-# ENV ANDROID_NDK_HOME /usr/local/android-ndk-r10e
-# ENV PATH $PATH:$ANDROID_NDK_HOME
+# ENV NDK_HOME /usr/local/android-ndk-r10e
+# ENV PATH $PATH:$NDK_HOME
