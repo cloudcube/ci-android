@@ -41,6 +41,15 @@ RUN echo yes | android update sdk --no-ui --all --filter platform-tools         
     echo yes | android update sdk --no-ui --all --filter extra-google-m2repository  && \
     echo yes | android update sdk --no-ui --all --filter extra-android-support
 
+# 安装配置gradle  
+RUN wget -q https://services.gradle.org/distributions/gradle-2.10-all.zip && \
+    unzip -o -d /usr/local/gradle gradle-2.10-all.zip && \
+    rm gradle-2.10-all.zip
+
+# 配置gradle环境变量
+ENV GRADLE_HOME /usr/local/gradle/gradle-2.10
+ENV PATH $PATH:$GRADLE_HOME/bin
+
 # # 安装 Android NDK
 # RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin && \
 #     chmod a+x android-ndk-r10e-linux-x86_64.bin                                && \
