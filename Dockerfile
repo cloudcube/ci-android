@@ -40,12 +40,12 @@ RUN curl -L https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-all
   && unzip -d /usr/share/ /usr/share/gradle-$GRADLE_VERSION-all.zip \
   && ln -s /usr/share/gradle-$GRADLE_VERSION /usr/share/gradle \
   && rm /usr/share/gradle-$GRADLE_VERSION-all.zip \
-  && ln -s /usr/share/gradle/bin/gradle /usr/bin/gradle \
+  && ln -s /usr/share/gradle/bin/gradle /usr/bin/gradle
 
 # install maven
 RUN curl -fsSL http://apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
-  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 # install android sdk
 RUN curl -o /opt/android-sdk_r$ANDROID_SDK_VERSION-linux.tgz -L https://dl.google.com/android/android-sdk_r$ANDROID_SDK_VERSION-linux.tgz \
@@ -58,7 +58,7 @@ RUN curl -o /opt/android-sdk_r$ANDROID_SDK_VERSION-linux.tgz -L https://dl.googl
 # install android build tools
 RUN cd /opt && curl -LO https://dl.google.com/android/repository/build-tools_r$ANDROID_VERSION-linux.zip \
   && unzip build-tools_r$ANDROID_VERSION-linux.zip \
-  && rm build-tools_r$ANDROID_VERSION-linux.zip \
+  && rm build-tools_r$ANDROID_VERSION-linux.zip
 
 # clean all cache to clean space
 RUN apt-get purge -y unzip \
