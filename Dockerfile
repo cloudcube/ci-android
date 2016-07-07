@@ -14,7 +14,7 @@ ENV PATH $GRADLE_HOME/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 RUN dpkg --add-architecture i386                                    && \
     apt-get update                                                  && \
-    apt-get install -y wget unzip curl                                   && \
+    apt-get install -y wget unzip curl git                          && \
     apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 && \
     apt-get clean
 
