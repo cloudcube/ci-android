@@ -31,7 +31,7 @@ RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-sec
 ENV JAVA7_HOME /usr/local/jdk1.7.0_79
 ENV JAVA8_HOME /usr/local/jdk1.8.0_77
 ENV JAVA_HOME /usr/local/jdk1.7.0_79
-ENV PATH $PATH:$JAVA_HOME/bin
+ENV PATH $PATH:$JAVA8_HOME/bin
 
 
 # 配置gradle环境变量
