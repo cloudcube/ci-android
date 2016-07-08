@@ -61,7 +61,7 @@ RUN cd /opt && curl -LO https://dl.google.com/android/repository/build-tools_r$A
   && rm build-tools_r$ANDROID_VERSION-linux.zip
 
 # link build tools
-ln -sf /opt/android-N/ /opt/android-sdk-linux/build-tools/24.0.0
+RUN ln -sf /opt/android-N/ /opt/android-sdk-linux/build-tools/24.0.0
 
 # clean all cache to clean space
 RUN apt-get purge -y unzip \
